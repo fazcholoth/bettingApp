@@ -6,7 +6,7 @@ function about() {
     <Layout>
        <div className="w-full min-h-[70vh]">
         <div className="bg-black w-full h-[40vh] flex justify-center items-center text-white">
-           About Us
+           About us
         </div>
         
         
