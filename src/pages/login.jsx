@@ -18,10 +18,10 @@ const Login = () => {
         
       });
     
-      // State to manage form validation errors
+      
       const [errors, setErrors] = useState({});
     
-      // Function to handle form input changes
+      
       const handleInputChange = (e) => {
         const { name, value } = e.target;
     
@@ -30,14 +30,14 @@ const Login = () => {
           [name]: value,
         });
     
-        // Clear the validation error when the user starts typing
+        
         setErrors({
           ...errors,
           [name]: '',
         });
       };
     
-      // Function to handle form submission
+      
       const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(formData);
@@ -58,14 +58,11 @@ const Login = () => {
             validationErrors.password = "Password should be atleast 6 charecters"
         }
     
-    
-        // If there are validation errors, set them in the state
         if (Object.keys(validationErrors).length > 0) {
           setErrors(validationErrors);
           return;
         }
-    
-        // If no validation errors, proceed with form submission
+
         console.log('Form submitted:', formData);
       };
     
