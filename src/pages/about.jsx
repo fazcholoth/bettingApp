@@ -1,18 +1,18 @@
 import React from 'react'
 import Layout from '../Components/Layout'
 
-function about() {
+function About() {
   return (
     <Layout>
-       <div className="w-full min-h-[70vh]">
-        <div className="bg-black w-full h-[40vh] flex justify-center items-center text-white">
-           About us
+      <div className="w-full min-h-[70vh]">
+        <div className="bg-black w-full h-[100vh] flex justify-center items-center text-white">
+          About us
         </div>
-        
-        
-      </div> 
+
+
+      </div>
     </Layout>
   )
 }
 
-export default about
+export default About;

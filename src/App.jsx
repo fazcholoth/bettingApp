@@ -1,16 +1,13 @@
+
 import Layout from "./Components/Layout"
+import Router from "./pages/router"
 
 function App() {
-  
+
+
 
   return (
-    
-      <Layout>
-
-        <div className="w-full flex justify-center min-h-[70vh]">Games</div>
-
-      </Layout>
-    
+      < Router />
   )
 }
 

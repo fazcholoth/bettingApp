@@ -3,7 +3,9 @@ import Layout from '../Components/Layout'
 
 
 
-function home() {
+function Home() {
+
+  console.log("this is home page");
   return (
     <Layout>
       <div className="w-full min-h-[70vh]">
@@ -26,4 +28,4 @@ function home() {
   )
 }
 
-export default home
+export default Home;

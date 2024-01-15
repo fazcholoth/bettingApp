@@ -6,4 +6,4 @@ function sample() {
   )
 }
 
-export default sample
+export default sample;
