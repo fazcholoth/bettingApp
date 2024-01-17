@@ -6,6 +6,7 @@ import { signUpValidation } from './signUpValidation';
 import { FaUserAlt } from "react-icons/fa";
 import { MdLabelImportant } from "react-icons/md";
 import axios from 'axios';
+import { apis } from '../Components/Config/config';
 
 
 const initialValues = {
@@ -22,12 +23,12 @@ const Register = () => {
     initialValues: initialValues,
     validationSchema: signUpValidation,
     onSubmit: (values) => {
-
+      console.log(values);
       const userResponse = async () =>{
-        console.log(values);
+        
       // axios.post('http://localhost:5000', values)
       
-      const respone = await axios.post('http://localhost:5000', values);
+      const respone = await axios.post(apis.register, values);
       console.log(respone);
       }
       userResponse();
