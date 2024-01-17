@@ -5,6 +5,8 @@ import { useFormik } from 'formik';
 import { signUpValidation } from './signUpValidation';
 import { FaUserAlt } from "react-icons/fa";
 import { MdLabelImportant } from "react-icons/md";
+import axios from 'axios';
+
 
 const initialValues = {
   name: "",
@@ -20,11 +22,21 @@ const Register = () => {
     initialValues: initialValues,
     validationSchema: signUpValidation,
     onSubmit: (values) => {
-      console.log(values);
+
+      const userResponse = async () =>{
+        console.log(values);
+      // axios.post('http://localhost:5000', values)
+      
+      const respone = await axios.post('http://localhost:5000', values);
+      console.log(respone);
+      }
+      userResponse();
+      
     }
   });
 
-  // console.log(formik);
+
+  
 
 
 
