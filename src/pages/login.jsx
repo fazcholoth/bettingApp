@@ -18,9 +18,16 @@ const Login = () => {
   const { values, handleBlur, handleChange, handleSubmit, errors } = useFormik({
     initialValues: initialValues,
     validationSchema: signUpValidation,
-    onSubmit: (values) => {
+    onSubmit: async(values) => {
       console.log(values);
-    }
+      try {
+        const response = await axios.post('http://localhost:5000/api/users/auth', values);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+      }
+  }
   });
 
 

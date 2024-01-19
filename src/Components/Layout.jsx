@@ -11,7 +11,7 @@ function Layout({ children }) {
       <div className="w-full bg-slate-700 flex justify-between px-10 text-white items-center h-[15vh]">
         <div className='cursor-pointer font-extrabold text-yellow-400'>Royal Betting</div>
         <div className="flex justify-between w-4/6 items-center">
-          {/* <div className="flex w-2/4 justify-between items-center">
+          <div className="flex w-2/4 justify-between items-center">
             <div>
               <Link to="/home"> Home </Link>
             </div>
@@ -22,7 +22,7 @@ function Layout({ children }) {
               <Link to="/about"> About </Link>
             </div>
             <div className='cursor-pointer'> Profile </div>
-          </div> */}
+          </div>
 
           <div className="flex w-full justify-end  items-center space-x-3">
             <div className="rounded-lg px-3 bg-yellow-500 hover:bg-orange-600">

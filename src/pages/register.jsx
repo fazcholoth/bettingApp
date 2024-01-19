@@ -22,17 +22,14 @@ const Register = () => {
   const { values, handleBlur, handleChange, handleSubmit, errors } = useFormik({
     initialValues: initialValues,
     validationSchema: signUpValidation,
-    onSubmit: (values) => {
-      console.log(values);
-      const userResponse = async () =>{
-        
-      // axios.post('http://localhost:5000', values)
-      
-      const respone = await axios.post(apis.register, values);
-      console.log(respone);
-      }
-      userResponse();
-      
+    onSubmit: async(values) => {
+        try {
+          const response = await axios.post('http://localhost:5000/api/users', values);
+          console.log(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          throw error;
+        }
     }
   });
 
