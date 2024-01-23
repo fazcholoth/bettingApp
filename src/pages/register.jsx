@@ -6,7 +6,7 @@ import { signUpValidation } from './signUpValidation';
 import { FaUserAlt } from "react-icons/fa";
 import { MdLabelImportant } from "react-icons/md";
 import axios from 'axios';
-import { apis } from '../Components/Config/config';
+
 
 
 const initialValues = {

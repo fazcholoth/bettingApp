@@ -6,6 +6,9 @@ import { useFormik } from "formik";
 import { signUpValidation } from "./signUpValidation";
 import { FaUserAlt } from "react-icons/fa";
 import { BiLogInCircle } from "react-icons/bi";
+import { loginValidation } from "./loginValidation";
+import axios from "axios";
+
 
 const initialValues = {
   email: "",
@@ -17,7 +20,7 @@ const Login = () => {
 
   const { values, handleBlur, handleChange, handleSubmit, errors } = useFormik({
     initialValues: initialValues,
-    validationSchema: signUpValidation,
+    validationSchema: loginValidation,
     onSubmit: async(values) => {
       console.log(values);
       try {
