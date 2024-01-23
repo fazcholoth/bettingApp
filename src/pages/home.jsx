@@ -6,6 +6,7 @@ import Layout from '../Components/Layout'
 function Home() {
 
   console.log("this is home page");
+  RS_P_1744661780011028485
   return (
     <Layout>
       <div className="w-full min-h-[70vh]">
