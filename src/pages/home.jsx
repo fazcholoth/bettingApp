@@ -1,30 +1,119 @@
-import React from 'react'
-import Layout from '../Components/Layout'
+import React, { useState } from 'react'
+import Layout from '../Components/Layout';
+import heroImg from '../assets/Cr2.jpg'
+import MatchList from './matchList';
+// import { useNavigate } from 'react-router-dom'
+// import MatchList from './Matches/matchList'
+import { PiShoppingBagFill } from "react-icons/pi";
+import { FaUserInjured } from "react-icons/fa";
+import { AiOutlineLogin } from "react-icons/ai";
+import { TbCricket } from "react-icons/tb";
+import { MdCasino } from "react-icons/md";
 
 
 
 function Home() {
 
-  console.log("this is home page");
-  RS_P_1744661780011028485
+  const [match, setMatch] = useState(false);
+  const redirectPage = () => {
+
+    setMatch(true);
+  }
+
+
+
+  // console.log("this is home page");
+  // RS_P_1744661780011028485
   return (
     <Layout>
-      <div className="w-full min-h-[70vh]">
-        <div className="bg-black w-full h-[40vh] flex justify-center items-center text-white">
-           Play Now
+
+      <div className=' flex'>
+        <div className='h-screen w-96 bg-black'>
+          <div className='text-white mt-24 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1'>
+            <div className='justify-center items-center mr-3 '>
+              <PiShoppingBagFill />
+            </div>
+            <div>
+              Bonus
+            </div>
+          </div>
+
+          <div className='flex '>
+            <div className='text-white mt-5 text-center font-bold text-lg border border-solid m-3 rounded-lg w-32 flex items-center justify-center h-10'>
+              <div className='justify-center items-center mr-3 '>
+                <FaUserInjured />
+              </div>
+              <div>
+                Guest
+              </div>
+            </div>
+            <div className='text-white mt-5 text-center font-bold text-lg border border-solid m-3 rounded-lg w-32 flex items-center justify-center h-10'>
+              <div className='justify-center items-center mr-3 '>
+                <AiOutlineLogin />
+              </div>
+              <div>
+                Login
+              </div>
+            </div>
+
+
+          </div>
+          <div className='text-white mt-5 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1'>
+            <div className='justify-center items-center mr-3 '>
+              <TbCricket />
+            </div>
+            <div>
+              Cricket
+            </div>
+          </div>
+          <div className='text-white mt-8 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1'>
+            <div className='justify-center items-center mr-3 '>
+              <MdCasino />
+            </div>
+            <div>
+              Bonus
+            </div>
+          </div>
         </div>
-        <div className="px-10">
-        <div>
-            <div>Cricket</div>
-            <img className="h-72 w-full" src="cricket2.jpg" alt="" />
+
+        <div className=' '>
+          <img src={heroImg} className='h-screen object-cover w-screen' />
         </div>
-        <div>
-            <div>Casino</div>
-            <img className="h-72 w-full" src="cricket2.jpg" alt="" />
-        </div>
-        </div>
-        
-      </div>  
+
+      </div>
+      {/* <div className='flex'>
+          <section className="bg-amber-300 text-white w-1/4 p-4 h-screen">
+            {/* Add sidebar content */}
+      {/* <h2 className="text-2xl font-bold mb-4">Sidebar</h2>
+            <ul>
+              <div>
+                <button className="mb-2" onClick={redirectPage} >Cricket</button>
+              </div>
+              <div> */}
+      {/* <button className="mb-2">Casino</button> */}
+      {/* </div> */}
+      {/* Add more sidebar options */}
+      {/* </ul> */}
+
+
+      {/* </section>
+          <section className=''>
+            <div > */}
+      {/* <img className="h-72 w-[800px] ml-auto" src="cricket2.jpg" alt="" />
+               */}
+      {
+        // match && <MatchList/>
+      }
+
+      {/* <div>
+
+              <img className="h-72 w-[800px]  ml-auto" src="cricket2.jpg" alt="" />
+            </div> */}
+
+      {/* </section> */}
+      {/* </div> */}
+
+      {/* </div> */}
     </Layout>
   )
 }

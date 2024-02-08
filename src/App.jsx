@@ -1,14 +1,19 @@
 
-import Layout from "./Components/Layout"
-import Router from "./pages/router"
+
+
+import { ToastContainer } from "react-toastify";
+import Router from "./pages/router";
 
 function App() {
 
 
 
   return (
-      < Router />
+    <>
+      <Router />
+      <ToastContainer/>
+    </>
   )
 }
 
-export default App
+export default App;
