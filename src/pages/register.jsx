@@ -23,13 +23,14 @@ const Register = () => {
     initialValues: initialValues,
     validationSchema: signUpValidation,
     onSubmit: async(values) => {
-        try {
-          const response = await axios.post('http://localhost:5000/api/users', values);
-          console.log(response.data);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-          throw error;
-        }
+      console.log(values);
+        // try {
+        //   const response = await axios.post('http://localhost:5000/api/users', values);
+        //   console.log(response.data);
+        // } catch (error) {
+        //   console.error('Error fetching data:', error);
+        //   throw error;
+        // }
     }
   });
 
