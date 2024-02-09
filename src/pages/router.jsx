@@ -6,18 +6,15 @@ import Contact from "./contact";
 import Home from "./home";
 import Games from "./Games";
 import Login from "./login";
-<<<<<<< HEAD
-import Register from "./register";
 import FindAssociations from '../pages/findAssociations'
 import FindTournament from '../pages/findTounaments'
 import FindFixture from '../pages/findFixture'
 import AdminMatches from '../pages/Adminmatches'
 import AdminBallbyball from "./adminBallbyball";
-=======
 import Register from "./register";  
 import MatchList from "./matchList";
+import MatchSections from "./matchSections";
 
->>>>>>> 6938c7a7c54f71d7077b638fc56ae53d6b973551
 
 
 const Router = () => {
@@ -25,7 +22,6 @@ const Router = () => {
         <HashRouter>
             <Routes>
                 <Route exact path="/login" element={<Login />} />
-                
                 <Route exact path="/register" element={<Register />} />
                 <Route exact path="/layout" element={<Layout />} />
                 <Route exact path="/about" element={<About />} />
@@ -38,6 +34,7 @@ const Router = () => {
                 <Route exact path="/fixture/:key" element={<FindFixture />} />
                 <Route exact path="/ballbyball/:key" element={<AdminBallbyball />} />
                 <Route exact path="/matchlist" element={<MatchList/>} />
+                <Route exact path="/matchsections" element={<MatchSections/>} />
             </Routes>
         </HashRouter>
 
