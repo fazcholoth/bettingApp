@@ -3,6 +3,8 @@ import Adminlayout from "../Components/AdminLayout";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useParams,useNavigate } from 'react-router-dom';
+import { BASE_URL } from "../Components/Config/config";
+
 
 
 function Matches() {
@@ -17,7 +19,7 @@ function Matches() {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/matches");
+        const response = await axios.get(`${ BASE_URL }matches`);
         console.log(response.data);
         setMatches(response?.data);
       } catch (error) {

@@ -7,6 +7,8 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdLabelImportant } from "react-icons/md";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from "../Components/Config/config";
+
 
 
 
@@ -26,7 +28,7 @@ const Register = () => {
     validationSchema: signUpValidation,
     onSubmit: async (values) => {
       try {
-        const response = await axios.post('http://localhost:5000/api/users', values);
+        const response = await axios.post(`${BASE_URL}users`, values);
         console.log(response.data);
       } catch (error) {
         // console.error('Error fetching data:', error);

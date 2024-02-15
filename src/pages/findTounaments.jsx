@@ -5,6 +5,8 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
+import { BASE_URL } from "../Components/Config/config";
+
 
 
 function Tournaments() {
@@ -18,7 +20,7 @@ function Tournaments() {
   useEffect(() => {
     const fetchTournaments = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/matches/tournaments/${key}`,);
+        const response = await axios.get(`${ BASE_URL }matches/tournaments/${key}`,);
         console.log(response.data);
         setTournaments(response?.data?.data?.tournaments);
       } catch (error) {

@@ -3,6 +3,8 @@ import axios from "axios";
 import Adminlayout from "../Components/AdminLayout";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../Components/Config/config";
+
 
 function Associations() {
   
@@ -13,7 +15,7 @@ function Associations() {
   useEffect(() => {
     const fetchAssociations = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/matches/associations');
+        const response = await axios.get(`${ BASE_URL }matches/associations`);
         console.log(response.data);
         setAssociations(response?.data?.data?.associations);
       } catch (error) {

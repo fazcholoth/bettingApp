@@ -14,6 +14,7 @@ import AdminBallbyball from "./adminBallbyball";
 import Register from "./register";  
 import MatchList from "./matchList";
 import MatchSections from "./matchSections";
+import Bidding from "./bidding";
 
 
 
@@ -34,7 +35,8 @@ const Router = () => {
                 <Route exact path="/fixture/:key" element={<FindFixture />} />
                 <Route exact path="/ballbyball/:key" element={<AdminBallbyball />} />
                 <Route exact path="/matchlist" element={<MatchList/>} />
-                <Route exact path="/matchsections" element={<MatchSections/>} />
+                <Route exact path="/matchlist/matchsections/:key/:format/:teamaname/:teambname" element={<MatchSections/>} />
+                <Route exact path="/matchlist/matchsections/:key/:format/:teama/:teamb/bidding/:team/:from/:to" element={<Bidding/>} />
             </Routes>
         </HashRouter>
 

@@ -9,6 +9,7 @@ import { FaUserInjured } from "react-icons/fa";
 import { AiOutlineLogin } from "react-icons/ai";
 import { TbCricket } from "react-icons/tb";
 import { MdCasino } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 
@@ -55,9 +56,8 @@ function Home() {
                 Login
               </div>
             </div>
-
-
           </div>
+          <Link to="/matchlist">
           <div className='text-white mt-5 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1'>
             <div className='justify-center items-center mr-3 '>
               <TbCricket />
@@ -66,12 +66,13 @@ function Home() {
               Cricket
             </div>
           </div>
+          </Link>
           <div className='text-white mt-8 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1'>
             <div className='justify-center items-center mr-3 '>
               <MdCasino />
             </div>
             <div>
-              Bonus
+              Casino
             </div>
           </div>
         </div>

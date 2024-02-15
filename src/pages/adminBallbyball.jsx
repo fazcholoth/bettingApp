@@ -2,6 +2,7 @@ import Adminlayout from "../Components/AdminLayout";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { BASE_URL } from "../Components/Config/config";
 
 function adminBallbyball() {
   const { key } = useParams();
@@ -18,7 +19,7 @@ function adminBallbyball() {
     const fetchmatchdata = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/matches/specificmatch/${key}`
+          `${BASE_URL}/matches/specificmatch/${key}`
         );
         // console.log(response.data);
         setmatch(response?.data?.match);
@@ -60,7 +61,7 @@ function adminBallbyball() {
   const update = async ()=>{
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/matches/ballbyball/${key}`
+        `${ BASE_URL }matches/ballbyball/${key}`
       );
       setupdated(response?.data)
     } catch (error) {

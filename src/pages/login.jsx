@@ -25,7 +25,6 @@ const Login = () => {
 
   const Notify = () => {
     toast('Login succesfull');
-
   }
 
   const { values, handleBlur, handleChange, handleSubmit, errors } = useFormik({
@@ -34,7 +33,7 @@ const Login = () => {
     onSubmit: async (values) => {
       console.log(values);
       try {
-        const response = await axios.post('http://localhost:5000/api/users/auth', values);
+        const response = await axios.post(`${BASE_URL}users/auth`, values);
         console.log(response.data);
         if (response.status === 200) {
           navigate('/home')

@@ -4,6 +4,8 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
+import { BASE_URL } from "../Components/Config/config";
+
 
 function Fixture() {
 
@@ -17,7 +19,7 @@ function Fixture() {
     useEffect(() => {
       const fetchFixture = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/matches/fixture/${key}`,);
+          const response = await axios.get(`${ BASE_URL }matches/fixture/${key}`,);
           console.log(response.data);
           setFixture(response?.data?.data?.matches);
         } catch (error) {
@@ -35,7 +37,7 @@ function Fixture() {
 
     const chooseMatch = async(key)=>{
         try {
-            const response = await axios.post(`http://localhost:5000/api/matches/addmatch/${key}`,);
+            const response = await axios.post(`${ BASE_URL }matches/addmatch/${key}`,);
             console.log(response.data);
             navigate('/admin');
 
