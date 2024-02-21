@@ -15,6 +15,7 @@ import Register from "./register";
 import MatchList from "./matchList";
 import MatchSections from "./matchSections";
 import Bidding from "./bidding";
+import FormatMatchlist from "./matchlistbyformat"
 
 
 
@@ -35,8 +36,11 @@ const Router = () => {
                 <Route exact path="/fixture/:key" element={<FindFixture />} />
                 <Route exact path="/ballbyball/:key" element={<AdminBallbyball />} />
                 <Route exact path="/matchlist" element={<MatchList/>} />
+                <Route exact path="/matchlist/:format" element={<FormatMatchlist/>} />
                 <Route exact path="/matchlist/matchsections/:key/:format/:teamaname/:teambname" element={<MatchSections/>} />
-                <Route exact path="/matchlist/matchsections/:key/:format/:teama/:teamb/bidding/:team/:from/:to" element={<Bidding/>} />
+                <Route exact path="/matchlist/matchsections/:key/:format/:teama/:teamb/bidding" element={<Bidding/>} />
+                {/* /matchlist/t20/matchsections/a-rz--cricket--K51746068628605947926/t20/Gulf%20Giants/Sharjah%20Warriors */}
+                <Route exact path="/matchlist/:format/matchsections/:key/:format/:teama/:teamb/bidding" element={<Bidding/>} />
             </Routes>
         </HashRouter>
 

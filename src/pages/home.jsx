@@ -10,18 +10,24 @@ import { AiOutlineLogin } from "react-icons/ai";
 import { TbCricket } from "react-icons/tb";
 import { MdCasino } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import { FaArrowCircleRight } from "react-icons/fa";
 
 
 
 function Home() {
 
-  const [match, setMatch] = useState(false);
+  const [display, setdisplay] = useState(true);
   const redirectPage = () => {
 
     setMatch(true);
   }
 
-
+  const cricketoptions = ['odi','t20','test']
+  
+  const changeStyle=()=>{
+    setdisplay(!display)
+    console.log('clicked');
+  }
 
   // console.log("this is home page");
   // RS_P_1744661780011028485
@@ -57,24 +63,35 @@ function Home() {
               </div>
             </div>
           </div>
-          <Link to="/matchlist">
-          <div className='text-white mt-5 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1'>
+          
+          {display&&(<div className='text-white mt-5 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1' onClick={changeStyle}>
             <div className='justify-center items-center mr-3 '>
               <TbCricket />
             </div>
-            <div>
+            <div className='flex gap-2 items-center'>
               Cricket
+              <FaArrowCircleRight />
             </div>
+          </div>)}
+          {!display&&(cricketoptions.map((options,index)=>(
+          <Link to={`/matchlist/${options}`} key={index}>
+          <div className='text-white mt-5 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1'>
+            
+              <div className='uppercase'>
+              {options}
+              </div>
           </div>
           </Link>
-          <div className='text-white mt-8 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1'>
+          )))}
+          
+          {display&&(<div className='text-white mt-8 text-center font-bold text-lg border border-solid m-3 rounded-lg  flex justify-center items-center px-1 py-1'>
             <div className='justify-center items-center mr-3 '>
               <MdCasino />
             </div>
             <div>
               Casino
             </div>
-          </div>
+          </div>)}
         </div>
 
         <div className=' '>
